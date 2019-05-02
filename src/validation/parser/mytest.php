@@ -31,4 +31,8 @@ class mytest {
         return $n >= 0 ? "yes" : "no";
     }
 
+    protected function setBaz(string $arg) : void {
+        $this->baz = $arg;
+    }
+
 }
