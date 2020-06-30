@@ -1,6 +1,6 @@
 {
-	"name": "dougw/framework",
-	"description": "pvc - a php development framework",
+	"name": "pvc/core",
+	"description": "pvc core library",
 	"type": "project",
 	"authors": [
 		{
