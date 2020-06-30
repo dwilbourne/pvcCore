@@ -9,7 +9,7 @@ Errors and Exceptions.  These are 'branded' inside the pvc namespace so that it 
 Messages.  There are ErrorException messages and User messages.
 
 Parsers.  Parsers take a string as input and try to convert the string into a native php data type or perhaps an object.  
-More generally, they convert strings into typed objects.  Typically used in the Controller area of an MVC framework, they take input and prepare it for loading
+More generally, they convert strings into things that can be type hinted.  Typically used in the Controller area of an MVC framework, they take input and prepare it for loading
 into the Model.
 
 Validators.  These are context-free validators, typically used within the Model before the substance of a model's method responds.
