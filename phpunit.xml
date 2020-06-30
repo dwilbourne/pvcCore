@@ -1,0 +1,70 @@
+<phpunit colors="true" bootstrap="vendor/autoload.php">
+
+    <logging>
+        <log type="coverage-html" target="coverage"/>
+    </logging>
+
+    <filter>
+        <whitelist>
+            <directory>src/array_utils*</directory>
+            <directory>src/charset*</directory>
+            <directory>src/doctype*</directory>
+            <directory>src/err*</directory>
+            <directory>src/filesys</directory>
+            <directory>src/formatter*</directory>
+            <directory>src/fraction*</directory>
+            <directory>src/intl*</directory>
+            <directory>src/msg*</directory>
+            <directory>src/parser*</directory>
+            <directory>src/range*</directory>
+            <directory>src/regex*</directory>
+            <directory>src/sanitizer*</directory>
+            <directory>src/struct*</directory>
+            <directory>src/time*</directory>
+            <directory>src/validator*</directory>
+            <directory>src/xml*</directory>
+        </whitelist>
+    </filter>
+
+
+    <testsuites>
+
+        <testsuite name="src_tests">
+            <directory>tests/array_utils*</directory>
+            <directory>tests/charset*</directory>
+            <directory>tests/doctype*</directory>
+            <directory>tests/err*</directory>
+            <directory>tests/filesys</directory>
+            <directory>tests/formatter*</directory>
+            <directory>tests/fraction*</directory>
+            <directory>tests/intl*</directory>
+            <directory>tests/msg*</directory>
+            <directory>tests/parser*</directory>
+            <directory>tests/range*</directory>
+            <directory>tests/regex*</directory>
+            <directory>tests/sanitizer*</directory>
+            <directory>tests/struct*</directory>
+            <directory>tests/time*</directory>
+            <directory>tests/validator*</directory>
+            <directory>tests/xml*</directory>
+        </testsuite>
+
+        <testsuite name="err_tests">
+            <directory>tests/err*</directory>
+        </testsuite>
+
+        <testsuite name="filesys_tests">
+            <directory>tests/filesys*</directory>
+        </testsuite>
+
+        <testsuite name="tree_tests">
+            <directory>tests/struct/tree*</directory>
+        </testsuite>
+
+        <testsuite name="list_tests">
+            <directory>tests/struct/lists*</directory>
+        </testsuite>
+
+    </testsuites>
+
+</phpunit>

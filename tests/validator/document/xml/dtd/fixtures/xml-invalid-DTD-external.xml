@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE note SYSTEM "D:\www\pvc\tests\validator\document\xml\schema\fixtures\note-with-element-removed.dtd">
+<note>
+  <to>Tove</to>
+  <from>Jani</from>
+  <heading>Reminder</heading>
+  <body>Don't forget me this weekend!</body>
+</note>
