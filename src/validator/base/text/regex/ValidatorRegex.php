@@ -5,6 +5,7 @@ namespace pvc\validator\base\text\regex;
 use pvc\err\throwable\exception\pvc_exceptions\UnsetAttributeException;
 use pvc\err\throwable\exception\pvc_exceptions\UnsetAttributeMsg;
 use pvc\msg\UserMsgInterface;
+use pvc\regex\err\RegexPatternUnsetException;
 use pvc\regex\Regex;
 use pvc\validator\base\ValidatorInterface;
 
@@ -79,7 +80,7 @@ class ValidatorRegex implements ValidatorInterface
      * @function validate
      * @param string $data
      * @return bool
-     * @throws \pvc\regex\err\RegexPatternUnsetException
+     * @throws RegexPatternUnsetException
      */
     public function validate($data) : bool
     {
