@@ -15,7 +15,7 @@ use pvc\validator\base\ValidatorInterface;
  */
 class ValidatorAlwaysTrue implements ValidatorInterface
 {
-    public function validate($data=null): bool
+    public function validate($data = null): bool
     {
         return true;
     }

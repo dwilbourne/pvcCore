@@ -14,7 +14,8 @@ class ValidatorAlwaysTrueTest extends TestCase
 
     protected ValidatorAlwaysTrue $validator;
 
-    public function setUp() : void {
+    public function setUp() : void
+    {
         $this->validator = new ValidatorAlwaysTrue();
     }
 
