@@ -2,12 +2,20 @@
 
 namespace pvc\helpers;
 
+use pvc\msg\ErrorExceptionMsg;
+use pvc\msg\UserMsg;
+use pvc\msg\UserMsgInterface;
+use pvc\validator\base\ValidatorInterface;
+
 /**
  *
  * class DOMEventHelper.  Assists in working with DOM events.
  *
  */
-class DomEventHelper {
+class DomEventHelper implements ValidatorInterface
+{
+
+    protected UserMsgInterface $errmsg;
 
     /**
      * @var $domEventList array.  list of valid Dom events
@@ -109,5 +117,27 @@ class DomEventHelper {
     {
         $key = array_search($eventName, self::$domEventList);
         return ($key === false ? false : true);
+    }
+
+    public function validate($data): bool
+    {
+        $result = self::isEvent($data);
+        if (!$result) {
+            $msgText = "%s is not a valid javascript event name.";
+            $msg = new UserMsg([$data], $msgText);
+            $this->setErrMsg($msg);
+            return false;
+        }
+        return true;
+    }
+
+    protected function setErrMsg(UserMsgInterface $msg) : void
+    {
+        $this->errmsg = $msg;
+    }
+
+    public function getErrMsg(): ?UserMsgInterface
+    {
+        return $this->errmsg ?? null;
     }
 }
