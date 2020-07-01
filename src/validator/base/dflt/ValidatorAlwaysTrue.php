@@ -6,7 +6,6 @@
 
 namespace pvc\validator\base\dflt;
 
-
 use pvc\msg\UserMsgInterface;
 use pvc\validator\base\ValidatorInterface;
 
@@ -16,8 +15,7 @@ use pvc\validator\base\ValidatorInterface;
  */
 class ValidatorAlwaysTrue implements ValidatorInterface
 {
-
-    public function validate($data): bool
+    public function validate($data=null): bool
     {
         return true;
     }
