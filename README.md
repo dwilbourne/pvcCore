@@ -12,7 +12,7 @@ Parsers.  Parsers take a string as input and try to convert the string into a na
 More generally, they convert strings into things that can be type hinted.  Typically used in the Controller area of an MVC framework, they take input and prepare it for loading
 into the Model.
 
-Validators.  These are context-free validators, typically used within the Model before the substance of a model's method responds.
+Validators.  These are context-free validators, typically used within the Model before the substance of a model's method responds.  There are also validators for html and xml documents.
 
 Formatters.  Essentially the reverse of parsers, these objects take php data types and objects and convert them back into strings.
 
