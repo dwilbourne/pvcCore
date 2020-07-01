@@ -2,14 +2,20 @@
 
 namespace pvc\intl;
 
+use pvc\msg\UserMsg;
+use pvc\msg\UserMsgInterface;
+use pvc\validator\base\ValidatorInterface;
+
 /**
  * Class IsoLanguageCodes
  *
  * These are valid language codes according to the ISO spec.
  *
  */
-class IsoLanguageCodes
+class IsoLanguageCodes implements ValidatorInterface
 {
+    protected ?UserMsgInterface $errmsg;
+
     protected static array $languageCodes = [
         'ab' => 'Abkhazian',
         'aa' => 'Afar',
@@ -225,5 +231,32 @@ class IsoLanguageCodes
     {
         /** @phpstan-ignore-next-line */
         return array_search($language, self::$languageCodes);
+    }
+
+    /**
+     * validate
+     * @param mixed $data
+     * @return bool
+     */
+    public function validate($data): bool
+    {
+        $this->errmsg = null;
+        $result = self::validateLanguageCode($data);
+        if (!$result) {
+            $msg = new UserMsg([$data], '%s is not a valid iso language code.');
+            $this->setErrMsg($msg);
+            return false;
+        }
+        return true;
+    }
+
+    protected function setErrMsg(UserMsgInterface $msg) : void
+    {
+        $this->errmsg = $msg;
+    }
+
+    public function getErrMsg(): ?UserMsgInterface
+    {
+        return $this->errmsg ?? null;
     }
 }
