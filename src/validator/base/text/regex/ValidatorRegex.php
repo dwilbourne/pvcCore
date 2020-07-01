@@ -4,8 +4,6 @@ namespace pvc\validator\base\text\regex;
 
 use pvc\err\throwable\exception\pvc_exceptions\UnsetAttributeException;
 use pvc\err\throwable\exception\pvc_exceptions\UnsetAttributeMsg;
-use pvc\msg\Msg;
-use pvc\msg\UserMsg;
 use pvc\msg\UserMsgInterface;
 use pvc\regex\Regex;
 use pvc\validator\base\ValidatorInterface;
@@ -13,7 +11,7 @@ use pvc\validator\base\ValidatorInterface;
 /**
  * Class ValidatorRegex
  */
-abstract class ValidatorRegex implements ValidatorInterface
+class ValidatorRegex implements ValidatorInterface
 {
 
     /**
