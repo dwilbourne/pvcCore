@@ -128,7 +128,7 @@ class IsoLanguageCodes
         'ne' => 'Nepali',
         'se' => 'Northern Sami',
         'no' => 'Norwegian',
-        'nb' => 'Norwegian Bokmål',
+        'nb' => 'Norwegian BokmÃ¥l',
         'nn' => 'Norwegian Nynorsk',
         'ii' => 'Nuosu, Sichuan Yi',
         'oc' => 'Occitan (post 1500)',
