@@ -22,7 +22,7 @@ class RegexTrueFalse extends RegexAlternationSimple
      */
     public function __construct()
     {
-        $this->setLabel("true / false");
+        $this->setLabel("true / false (not case sensitive)");
         $this->addChoice('true');
         $this->addChoice('false');
         $this->setCaseSensitive(false);
