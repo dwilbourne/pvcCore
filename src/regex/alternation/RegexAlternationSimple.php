@@ -17,22 +17,40 @@ use pvc\Regex\Regex;
 
 class RegexAlternationSimple extends Regex
 {
+    /**
+     * @var array
+     */
     protected array $choices;
 
-    protected bool $caseSensitive;
+    /**
+     * @var bool
+     */
+    protected bool $caseSensitive = true;
 
 
-
+    /**
+     * addChoice
+     * @param string $choice
+     */
     public function addChoice(string $choice)
     {
         $this->choices[] = $choice;
     }
 
+    /**
+     * setCaseSensitive
+     * @param bool $x
+     */
     public function setCaseSensitive(bool $x)
     {
         $this->caseSensitive = $x;
     }
 
+    /**
+     * makePattern
+     * @return string
+     * @throws OutOfContextMethodCallException
+     */
     public function makePattern(): string
     {
         if (empty($this->choices)) {
