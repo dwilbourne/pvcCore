@@ -14,14 +14,45 @@ namespace pvc\msg;
 interface MsgInterface
 {
     /**
-     * @function getMsgText
-     * @return string
+     * addMsgVar
+     * @param null $var
      */
-    public function getMsgText() : string;
+    public function addMsgVar($var = null) : void;
 
     /**
-     * @function getMsgVars
-     * @return mixed[]
+     * setMsgVars
+     * @param array $vars
+     */
+    public function setMsgVars(array $vars) : void;
+
+    /**
+     * getMsgVars
+     * @return array
      */
     public function getMsgVars() : array;
+
+    /**
+     * getMsgText
+     * @return string
+     */
+    public function getMsgText(): string;
+
+    /**
+     * setMsgText
+     * @param string $msgText
+     */
+    public function setMsgText(string $msgText): void;
+
+    /**
+     * makeErrorExceptionMsg
+     * @return ErrorExceptionMsg
+     */
+    public function makeErrorExceptionMsg(): ErrorExceptionMsg;
+
+    /**
+     * makeUserMsg
+     * @return UserMsg
+     */
+    public function makeUserMsg() : UserMsg;
+
 }
