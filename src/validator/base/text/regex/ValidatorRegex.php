@@ -23,7 +23,7 @@ class ValidatorRegex implements ValidatorInterface
     /**
      * @var UserMsgInterface|null
      */
-    protected ? UserMsgInterface $errmsg;
+    protected UserMsgInterface $errmsg;
 
     /**
      * ValidatorRegex constructor.
@@ -60,18 +60,18 @@ class ValidatorRegex implements ValidatorInterface
 
     /**
      * @function getErrmsg
-     * @return UserMsgInterface
+     * @return UserMsgInterface|null
      */
-    public function getErrmsg(): UserMsgInterface
+    public function getErrmsg(): ? UserMsgInterface
     {
-        return $this->errmsg;
+        return $this->errmsg ?? null;
     }
 
     /**
      * @function setErrmsg
-     * @param UserMsgInterface|null $errmsg
+     * @param UserMsgInterface $errmsg
      */
-    protected function setErrmsg(UserMsgInterface $errmsg=null): void
+    protected function setErrmsg(UserMsgInterface $errmsg): void
     {
         $this->errmsg = $errmsg;
     }
@@ -88,7 +88,7 @@ class ValidatorRegex implements ValidatorInterface
             $this->setErrmsg($this->regex->getErrmsg());
             return false;
         }
-        $this->setErrmsg(null);
+        unset($this->errmsg);
         return true;
     }
 }
