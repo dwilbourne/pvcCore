@@ -62,12 +62,25 @@ class Msg implements MsgInterface
     }
 
     /**
+     * These next two allow interchangeability between the two message types
+     */
+
+    /**
      * @function makeErrorExceptionMsg
      * @return ErrorExceptionMsg
      */
     public function makeErrorExceptionMsg(): ErrorExceptionMsg
     {
         return new ErrorExceptionMsg($this->getMsgVars(), $this->getMsgText());
+    }
+
+    /**
+     * makeUserMsg
+     * @return UserMsg
+     */
+    public function makeUserMsg() : UserMsg
+    {
+        return new UserMsg($this->getMsgVars(), $this->getMsgText());
     }
 
     /**
